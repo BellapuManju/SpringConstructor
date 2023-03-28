@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframe work.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    ">
+    
+    <bean id="hello" class="com.ciq.bean.Helloworld">
+    <property name="name" value="Manju"></property>
+      </bean>
+      
+      <!-- SETTER iNJECTION -->
+      <bean id="eml" class="com.ciq.bean.Employe">
+      <property name="id" value="1001"></property>
+      <property name="name" value="Raju"></property>
+      <property name="salary" value="76456456.00"></property>
+      <property name="location" value="hyd"></property>
+      <property name="Address" ref="addres"></property>
+      </bean>
+      
+            <bean id="addres" class="com.ciq.bean.Address">
+      <property name="aid" value="6"></property>
+      <property name="aname" value="lohith"></property>
+      <property name="pin" value="6563"></property>
+      </bean>
+      
+      <!-- CONSTRUCTOR INJECTION -->    
+      <bean id="ss" class="com.ciq.bean.Student">
+      <constructor-arg value="800"></constructor-arg>
+      <constructor-arg value="Kittu"></constructor-arg>
+      <constructor-arg value="7546754.00"></constructor-arg>
+      <constructor-arg ref="addres"></constructor-arg>
+      </bean>
+      
+      
+    </beans>
